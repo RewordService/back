@@ -1,24 +1,11 @@
-# README
+# REWORD BACK
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Gems
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- [devise_token_auth](https://github.com/lynndylanhurley/devise_token_auth)
+- [ransack](https://github.com/activerecord-hackery/ransack)
+- [kaminari](https://github.com/kaminari/kaminari)
+- [carrierwave](https://github.com/carrierwaveuploader/carrierwave)
+- [fog-aws](https://github.com/fog/fog-aws)
+- [rubocop-airbnb](https://github.com/airbnb/ruby/tree/master/rubocop-airbnb)
+- ~~[fog](https://github.com/fog/fog)~~

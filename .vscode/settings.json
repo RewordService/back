@@ -1,7 +1,11 @@
 {
   "editor.tabSize": 2,
-  "editor.formatOnSave": true,
+  "[ruby]": {
+    "editor.formatOnSave": true,
+  },
   "ruby.useLanguageServer": true,
-  "ruby.lint": "rubocop",
+  "ruby.lint": {
+    "rubocop": true
+  },
   "ruby.format": "rubocop"
 }

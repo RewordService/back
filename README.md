@@ -9,7 +9,7 @@
 - [kaminari](https://github.com/kaminari/kaminari)
 - [carrierwave](https://github.com/carrierwaveuploader/carrierwave)
 - [fog-aws](https://github.com/fog/fog-aws)
-  
+
 ## development
 
 - [rubocop-airbnb](https://github.com/airbnb/ruby/tree/master/rubocop-airbnb)

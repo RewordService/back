@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    render json: User.all
+    render json: User.ransack(params[:q]).result.page(params[:page])
   end
 
   def show
@@ -13,5 +13,9 @@ class UsersController < ApplicationController
 
   def ranked
     render json: User.all
+  end
+
+  def user_params
+    params.require(:q).permit(:name_cont)
   end
 end

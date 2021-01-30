@@ -2,16 +2,23 @@ require 'rails_helper'
 
 RSpec.describe "Users", type: :request do
   let!(:users) { create_list(:user, 5) }
-  let(:user) {create(:user)}
+  let(:user) { create(:user) }
+
   describe "GET /index" do
+
     it "returns http success" do
-      get users_path
+      get users_path q: { name_cont: "" }, page: 1
       expect(response).to have_http_status(:success)
     end
 
     it "return users" do
-      get users_path
+      get users_path q: { name_cont: "" }, page: 1
       expect(response.body).to eq User.all.to_json
+    end
+
+    it "return search result users" do
+      get users_path q: { name_cont: "a" }, page: 1
+      expect(response.body).to eq User.ransack({name_cont: "a"}).result.page(1).to_json
     end
   end
 
@@ -22,7 +29,7 @@ RSpec.describe "Users", type: :request do
     end
 
     it "return user" do
-      get user_path user 
+      get user_path user
       expect(response.body).to eq user.to_json
     end
   end

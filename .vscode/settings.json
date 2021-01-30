@@ -4,8 +4,4 @@
     "editor.formatOnSave": true,
   },
   "ruby.useLanguageServer": true,
-  "ruby.lint": {
-    "rubocop": true
-  },
-  "ruby.format": "rubocop"
 }

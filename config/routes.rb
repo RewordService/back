@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :users 
+  resources :users
   get 'users/latest'
   get 'users/ranked'
   mount_devise_token_auth_for 'User', at: 'auth'

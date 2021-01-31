@@ -2,6 +2,7 @@
 
 class User < ActiveRecord::Base
   has_one :profile
+  mount_uploader :image, AvatarUploader
   extend Devise::Models
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

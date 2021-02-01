@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    render json: User.find(params[:id]), include: :profile
+    render json: User.find(params[:id]), include: %i(profile reword)
   end
 
   def latest
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def ranked
-    render json: User.all
+    render json: User.find(Reword.group(:id).order(total: :desc).limit(5).pluck(:user_id))
   end
 
   def user_params

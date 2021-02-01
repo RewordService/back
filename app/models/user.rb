@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class User < ActiveRecord::Base
-  after_create :create_reword, :create_profile
-  has_one :profile
-  has_one :reword
+  after_create :after_create_reword, :after_create_profile
+  has_one :profile, dependent: :destroy
+  has_one :reword, dependent: :destroy
   mount_uploader :image, AvatarUploader
   extend Devise::Models
   # Include default devise modules. Others available are:
@@ -12,11 +12,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   include DeviseTokenAuth::Concerns::User
 
-  def create_reword
-    build_reword
+  def after_create_reword
+    self.create_reword
   end
 
-  def create_profile
-    build_profile
+  def after_create_profile
+    self.create_profile
   end
 end

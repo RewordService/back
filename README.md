@@ -10,7 +10,9 @@
 - [carrierwave](https://github.com/carrierwaveuploader/carrierwave)
 - [rmagick](https://github.com/rmagick/rmagick)
 - [fog-aws](https://github.com/fog/fog-aws)
-- ~~[olive-branch](https://github.com/vigetlabs/olive_branch)~~ テストがやりずらい
+- [stripe](https://github.com/stripe/stripe-ruby)
+- [rack-cors](https://github.com/cyu/rack-cors)
+- ~~[olive-branch](https://github.com/vigetlabs/olive_branch)~~ テストがやりにくい
 
 ## development
 
@@ -19,3 +21,15 @@
 - [factory-bot_rails](https://github.com/thoughtbot/factory_bot_rails)
 - [faker](https://github.com/faker-ruby/faker)
 - ~~[fog](https://github.com/fog/fog)~~ ワーニングが発生する
+
+## Routes
+
+|verb|uri|params|response|
+|:--:|:--:|:--:| :--:|
+|PUT/PATCH|/user/profile|headers|Profile|
+|PUT/PATCH|/user/reword|result/count/headers|Reword|
+|GET|/users|q/page |Users|
+|GET|/users/:id|id|User|
+|GET|/users/latest|none|Users|
+|GET|/users/ranked|none|Users|
+|GET|/reword/info|none|RewordInfo|

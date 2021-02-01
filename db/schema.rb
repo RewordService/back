@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 2021_01_31_192926) do
   end
 
   create_table "rewords", force: :cascade do |t|
-    t.json "1", default: {"total"=>0, "success"=>0}
     t.json "2", default: {"total"=>0, "success"=>0}
     t.json "3", default: {"total"=>0, "success"=>0}
     t.json "4", default: {"total"=>0, "success"=>0}
@@ -37,6 +36,7 @@ ActiveRecord::Schema.define(version: 2021_01_31_192926) do
     t.json "9", default: {"total"=>0, "success"=>0}
     t.json "10", default: {"total"=>0, "success"=>0}
     t.integer "total", default: 0
+    t.integer "success", default: 0
     t.integer "score", default: 0
     t.bigint "user_id"
     t.datetime "created_at", null: false

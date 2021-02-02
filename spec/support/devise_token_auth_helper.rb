@@ -1,5 +1,5 @@
 module DeviseTokenAuthHelper
-  def login user
+  def login(user)
     post user_session_path, params: { email: user.email, password: 'password' }.to_json,
                             headers: {
                               'CONTENT_TYPE' => 'application/json',

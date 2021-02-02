@@ -15,16 +15,6 @@ ActiveRecord::Schema.define(version: 2021_01_31_192926) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "profiles", force: :cascade do |t|
-    t.integer "gender"
-    t.string "introduction"
-    t.date "birthday"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_profiles_on_user_id"
-  end
-
   create_table "rewords", force: :cascade do |t|
     t.json "2", default: {"total"=>0, "success"=>0}
     t.json "3", default: {"total"=>0, "success"=>0}
@@ -65,6 +55,9 @@ ActiveRecord::Schema.define(version: 2021_01_31_192926) do
     t.string "nickname"
     t.string "image"
     t.string "email"
+    t.integer "gender"
+    t.string "introduction"
+    t.date "birthday"
     t.json "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -74,6 +67,5 @@ ActiveRecord::Schema.define(version: 2021_01_31_192926) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
-  add_foreign_key "profiles", "users"
   add_foreign_key "rewords", "users"
 end

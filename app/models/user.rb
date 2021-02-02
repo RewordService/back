@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class User < ActiveRecord::Base
-  after_create :after_create_reword, :after_create_profile
-  has_one :profile, dependent: :destroy
+  after_create :after_create_reword
   has_one :reword, dependent: :destroy
   mount_uploader :image, AvatarUploader
   extend Devise::Models
@@ -13,10 +12,7 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
 
   def after_create_reword
-    self.create_reword
+    create_reword
   end
 
-  def after_create_profile
-    self.create_profile
-  end
 end

@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    render json: User.find(params[:id]), include: %i(profile reword)
+    render json: User.find(params[:id]), include: :reword
   end
 
   def latest

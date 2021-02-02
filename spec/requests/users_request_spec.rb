@@ -16,7 +16,7 @@ RSpec.describe "Users", type: :request do
     end
 
     it "return search result users" do
-      search,page = "a",1
+      search, page = "a", 1
       get users_path q: { nameCont: search }, page: page
       expect(response.body).to eq User.ransack({ nameCont: search }).result.page(page).to_json
     end
@@ -42,9 +42,6 @@ RSpec.describe "Users", type: :request do
       expect(user.reword).to be_present
     end
 
-    it "is exist profile record" do
-      expect(user.profile).to be_present
-    end
   end
 
   describe "GET /latest" do

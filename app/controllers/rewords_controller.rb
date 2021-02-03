@@ -4,7 +4,7 @@ class RewordsController < ApplicationController
   def info
     total_score = Reword.all.sum(:total)
     success_score = Reword.all.sum(:success)
-    success_rate = total_score > 0 ? ((success_score / total_score).to_f * 100).floor(1) : 0
+    success_rate = total_score > 0 ? (success_score / total_score.to_f * 100).floor(1) : 0
     render json: { total_score: total_score, success_rate: success_rate }
   end
 

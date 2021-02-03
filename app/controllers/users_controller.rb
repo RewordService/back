@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    render json: User.ransack(JSON.parse(params[:q])).result.page(params[:page])
+    render json: User.ransack(JSON.parse(params[:q])).result
   end
 
   def show

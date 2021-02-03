@@ -18,6 +18,5 @@
 !/storage/.keep
 
 .byebug_history
-/db/csv
 # Ignore master key for decrypting credentials and more.
 /config/master.key

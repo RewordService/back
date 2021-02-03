@@ -33,9 +33,3 @@ CSV.foreach('db/csv/prev_rewords.csv', headers: true) do |row|
     success: row["successs"]
   )
 end
-
-20.times do
-  password = Faker::Internet.password
-  User.create(email: Faker::Internet.email, name:  Faker::Name.name, password: password, password_confirmation: 
-    password )
-end

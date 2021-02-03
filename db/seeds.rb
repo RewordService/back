@@ -17,8 +17,6 @@ CSV.foreach('db/csv/prev_users.csv', headers: true) do |row|
   user.save
 end
 CSV.foreach('db/csv/prev_rewords.csv', headers: true) do |row|
-  p row["2"]
-  p "parse", JSON.parse(row["2"])
   User.find(row["user_id"]).reword.update(
     "2"=> JSON.parse(row["2"]) ,
     "3"=> JSON.parse(row["3"]) ,
@@ -30,6 +28,6 @@ CSV.foreach('db/csv/prev_rewords.csv', headers: true) do |row|
     "9"=> JSON.parse(row["9"]) ,
     "10"=> JSON.parse(row["10"]),
     total: row["total"],
-    success: row["successs"]
+    success: row["success"]
   )
 end

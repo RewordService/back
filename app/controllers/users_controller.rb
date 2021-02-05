@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def latest
-    render json: User.all.limit(10)
+    render json: User.order(created_at: :desc).limit(10)
   end
 
   def ranked

@@ -2,6 +2,20 @@
 
 ## Gems
 
+## RSpec
+
+```cmd
+docker-compose run web rspec
+```
+
+## Credentials
+
+```cmd
+docker-compose run web rails credentials:edit
+
+heroku config:set RAILS_MASTER_KEY=`cat config/master.key`
+```
+
 ## production
 
 - [devise_token_auth](https://github.com/lynndylanhurley/devise_token_auth)
@@ -12,6 +26,7 @@
 - [fog-aws](https://github.com/fog/fog-aws)
 - [stripe](https://github.com/stripe/stripe-ruby)
 - [rack-cors](https://github.com/cyu/rack-cors)
+- [api-pagination](https://github.com/davidcelis/api-pagination)
 - ~~[olive-branch](https://github.com/vigetlabs/olive_branch)~~ テストがやりにくい
 
 ## development
@@ -30,6 +45,6 @@
 |PUT/PATCH|/user/reword|result/count/headers|Reword|
 |GET|/users|q/page |Users|
 |GET|/users/:id|id|User|
-|GET|/users/latest|none|Users|
-|GET|/users/ranked|none|Users|
+|GET|/users/latest|page|Users|
+|GET|/users/ranked|page|Users|
 |GET|/reword/info|none|RewordInfo|

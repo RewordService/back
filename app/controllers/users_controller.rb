@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    render json: User.ransack(JSON.parse(params[:q])).result
+    paginate json: User.ransack(params[:q].is_a?(String) ? JSON.parse(params[:q]) : params[:q]).result
   end
 
   def show
@@ -8,11 +8,11 @@ class UsersController < ApplicationController
   end
 
   def latest
-    render json: User.order(created_at: :desc).limit(10)
+    paginate json: User.order(created_at: :desc)
   end
 
   def ranked
-    render json: User.find(Reword.group(:id).order(score: :desc).limit(5).pluck(:user_id))
+    paginate json: User.find(Reword.group(:id).order(score: :desc).pluck(:user_id))
   end
 
   def user_params

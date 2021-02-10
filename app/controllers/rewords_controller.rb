@@ -29,6 +29,6 @@ class RewordsController < ApplicationController
     render json: @game_info
   end
   def set_game_info
-    @game_info = {score: current_user.reword.score, ranking: Reword.all.order(score: :desc).index(current_user.reword)}
+    @game_info = {score: current_user.reword.score, ranking: Reword.all.order(score: :desc).index(current_user.reword) + 1}
   end
 end

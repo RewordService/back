@@ -1,5 +1,8 @@
 # REWORD BACK
 
+- [FRONT](https://github.com/izszzz/reword_front)
+- [MOBILE](https://github.com/izszzz/reword_mobile)
+
 ## Gems
 
 ## RSpec
@@ -20,6 +23,12 @@ docker-compose run web rubocop --auto-correct
 docker-compose run web rails credentials:edit
 
 heroku config:set RAILS_MASTER_KEY=`cat config/master.key`
+```
+
+## Sitemap
+
+```cmd
+heroku run rails sitemap:refresh
 ```
 
 ## production

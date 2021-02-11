@@ -8,6 +8,12 @@
 docker-compose run web rspec
 ```
 
+## Rubocop
+
+```cmd
+docker-compose run web rubocop --auto-correct
+```
+
 ## Credentials
 
 ```cmd
@@ -36,6 +42,10 @@ heroku config:set RAILS_MASTER_KEY=`cat config/master.key`
 - [factory-bot_rails](https://github.com/thoughtbot/factory_bot_rails)
 - [faker](https://github.com/faker-ruby/faker)
 - ~~[fog](https://github.com/fog/fog)~~ ワーニングが発生する
+
+## SEO
+
+- [sitemap_generator](https://github.com/kjvarga/sitemap_generator)
 
 ## Routes
 

@@ -4,10 +4,10 @@ class ContactsController < ApplicationController
     if contact.valid?
       ContactMailer.contact_mail(contact).deliver
     end
-    render json: contact 
+    render json: contact
   end
 
   def contact_params
-      params.require(:contact).permit(:email, :message)
+    params.require(:contact).permit(:email, :message)
   end
 end

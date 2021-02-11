@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   def index
-    paginate json: User.ransack(params[:q].is_a?(String) ? JSON.parse(params[:q]) : params[:q]).result
+    paginate json: User.ransack(
+      params[:q].is_a?(String) ? JSON.parse(params[:q]) : params[:q]
+    ).result
   end
 
   def show

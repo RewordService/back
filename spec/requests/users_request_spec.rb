@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe "Users", type: :request do
   let!(:users) { create_list(:user, 10) }
   let!(:user) { create(:user) }
+
   page = 1
   describe "GET /index" do
     it "returns http success" do
@@ -16,7 +17,7 @@ RSpec.describe "Users", type: :request do
     end
 
     it "return search result users" do
-      search= "a"
+      search = "a"
       get users_path q: { nameCont: search }, page: page
       expect(response.body).to eq User.ransack({ nameCont: search }).result.page(page).to_json
     end
@@ -63,7 +64,9 @@ RSpec.describe "Users", type: :request do
 
     it "return ranked users" do
       get ranked_users_path page: page
-      expect(response.body).to eq Kaminari.paginate_array(User.find(Reword.group(:id).order(score: :desc).pluck(:user_id))).page(page).to_json
+      expect(response.body).to eq Kaminari.paginate_array(
+        User.find(Reword.group(:id).order(score: :desc).pluck(:user_id))
+      ).page(page).to_json
     end
   end
 end

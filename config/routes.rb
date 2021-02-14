@@ -20,5 +20,6 @@ Rails.application.routes.draw do
     get '*path', to: "application#fallback_index_html", constraints: ->(request) do
     !request.xhr? && request.format.html?
   end
+  get '/sitemap', to: redirect(https://reword.s3-ap-northeast-1.amazonaws.com/sitemaps/sitemap.xml.gz)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

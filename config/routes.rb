@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  scope :api do
     mount_devise_token_auth_for 'User', at: 'auth', controllers: {
       registrations: 'auth/registrations',
     }
@@ -16,7 +15,6 @@ Rails.application.routes.draw do
     resources :contacts, only: :create
 
     get 'reword/info', to: "rewords#info"
-  end
   get '/sitemap', to: redirect("https://reword.s3-ap-northeast-1.amazonaws.com/sitemaps/sitemap.xml.gz")
   get '*path', to: "application#fallback_index_html", constraints: ->(request) do
     !request.xhr? && request.format.html?

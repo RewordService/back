@@ -9,9 +9,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd reword_front && yarn install && yarn build && cd ..",
+    "build": "cd reword_front && npm install && npm run build && cd ..",
     "deploy": "cp -a reword_front/build/. public/",
-    "heroku-postbuild": "yarn build && yarn deploy && echo 'front built!'"
+    "heroku-postbuild": "npm run build && npm run deploy && echo 'front built!'"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,26 @@
+{
+  "name": "reword_back",
+  "version": "1.0.0",
+  "description": "- [FRONT](https://github.com/izszzz/reword_front) - [MOBILE](https://github.com/izszzz/reword_mobile)",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd reword_front && yarn install && yarn build && cd ..",
+    "deploy": "cp -a reword_front/build/. public/",
+    "heroku-postbuild": "yarn build && yarn deploy && echo 'front built!'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/izszzz/reword_back.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/izszzz/reword_back/issues"
+  },
+  "homepage": "https://github.com/izszzz/reword_back#readme"
+}

@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd reword_front && npm install && npm run build && cd ..",
+    "build": "tsc",
+    "postinstall": "cd reword_front && npm install && npm run build && cd ..",
     "deploy": "cp -a reword_front/build/. public/",
     "heroku-postbuild": "npm run build && npm run deploy && echo 'front built!'"
   },

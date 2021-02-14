@@ -15,11 +15,11 @@ Rails.application.routes.draw do
     end
     resources :contacts, only: :create
 
+    get 'reword/info', to: "rewords#info"
   end
-  get 'reword/info', to: "rewords#info"
-    get '*path', to: "application#fallback_index_html", constraints: ->(request) do
+  get '/sitemap', to: redirect("https://reword.s3-ap-northeast-1.amazonaws.com/sitemaps/sitemap.xml.gz")
+  get '*path', to: "application#fallback_index_html", constraints: ->(request) do
     !request.xhr? && request.format.html?
   end
-  get '/sitemap', to: redirect(https://reword.s3-ap-northeast-1.amazonaws.com/sitemaps/sitemap.xml.gz)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -17,8 +17,8 @@ Rails.application.routes.draw do
 
     get 'reword/info', to: "rewords#info"
     get '/news.json', to: redirect("/news.json")
+    get '/sitemap', to: redirect("https://reword.s3-ap-northeast-1.amazonaws.com/sitemaps/sitemap.xml.gz")
   end
-  get '/sitemap', to: redirect("https://reword.s3-ap-northeast-1.amazonaws.com/sitemaps/sitemap.xml.gz")
   get '*path', to: "application#fallback_index_html", constraints: ->(request) do
     !request.xhr? && request.format.html?
   end

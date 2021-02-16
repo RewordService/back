@@ -60,10 +60,10 @@ heroku run rails sitemap:refresh
 
 |verb|uri|params|response|
 |:--:|:--:|:--:| :--:|
-|PUT/PATCH|/user/profile|headers|Profile|
-|PUT/PATCH|/user/reword|result/count/headers|Reword|
-|GET|/users|q/page |Users|
-|GET|/users/:id|id|User|
-|GET|/users/latest|page|Users|
-|GET|/users/ranked|page|Users|
-|GET|/reword/info|none|RewordInfo|
+|PUT/PATCH|/api/user/profile|headers|Profile|
+|PUT/PATCH|/api/user/reword|result/count/headers|Reword|
+|GET|/api/users|q/page |Users|
+|GET|/api/users/:id|id|User|
+|GET|/api/users/latest|page|Users|
+|GET|/api/users/ranked|page|Users|
+|GET|/api/reword/info|none|RewordInfo|
